@@ -1,0 +1,49 @@
+{% extends 'AcmeDemoBundle::layout.html.twig' %}
+
+{% block content %}
+<div class="hero-unit">
+    <h1>Hello, world!</h1>
+    <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+    <div class="row-fluid">
+        <div class="span6">
+            <p><a target="_blank" href="{{ path('msi_cmf_dashboard') }}" class="btn btn-primary btn-large">Admin »</a></p>
+        </div>
+        <div class="span6">
+            <small>email: <span class="label label-inverse">demo@demo.com</span><br>password: <span class="label label-inverse">123456</span></small>
+        </div>
+    </div>
+</div>
+{{ page.translation.body|raw }}
+<hr>
+<div class="row">
+    <div class="span7">
+        <h4>Lorem lorem lorem</h4>
+        <p style="margin-top: -7px;"><small class="muted">{{ 'now'|date('d-m-Y') }}</small></p>
+        <p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra...</p>
+        <p><a href="#">Read more »</a></p>
+        <hr>
+        <h4>Lorem lorem lorem</h4>
+        <p style="margin-top: -7px;"><small class="muted">{{ 'now'|date('d-m-Y') }}</small></p>
+        <p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra...</p>
+        <p><a href="#">Read more »</a></p>
+    </div>
+    <div class="span5">
+        <blockquote>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <small>Someone famous</small>
+        </blockquote>
+        <blockquote>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <small>Someone famous</small>
+        </blockquote>
+        <blockquote>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <small>Someone famous</small>
+        </blockquote>
+        <blockquote>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <small>Someone famous</small>
+        </blockquote>
+    </div>
+</div>
+{% endblock content %}
