@@ -25,53 +25,53 @@ class LoadMenuData extends AbstractFixture implements ContainerAwareInterface, O
     {
         // ADMIN MENU
         // root
-        $root = $this->menuManager->create();
+        $root = $this->menuManager->create()->setPublished(true);
         $this->menuManager->createTranslations($root, array('fr'));
-        $root->getTranslation()->setPublished(true)->setName('admin');
+        $root->getTranslation()->setName('admin');
         $manager->persist($root);
         $manager->flush();
             // sites
-            $menu = $this->menuManager->create();
+            $menu = $this->menuManager->create()->setPublished(true);
             $this->menuManager->createTranslations($menu, array('fr'));
             $menu->getTranslation()->setRoute('@msi_cmf_site_admin_list');
             $menu->setParent($root);
-            $menu->getTranslation()->setPublished(true)->setName('Sites');
+            $menu->getTranslation()->setName('Sites');
             $manager->persist($menu);
             // security
-            $security = $this->menuManager->create();
+            $security = $this->menuManager->create()->setPublished(true);
             $this->menuManager->createTranslations($security, array('fr'));
             $security->setParent($root);
-            $security->getTranslation()->setPublished(true)->setName('Sécurité');
+            $security->getTranslation()->setName('Sécurité');
             $manager->persist($security);
                 // users
-                $menu = $this->menuManager->create();
+                $menu = $this->menuManager->create()->setPublished(true);
                 $this->menuManager->createTranslations($menu, array('fr'));
                 $menu->getTranslation()->setRoute('@msi_user_user_admin_list');
                 $menu->setParent($security);
-                $menu->getTranslation()->setPublished(true)->setName('Utilisateurs');
+                $menu->getTranslation()->setName('Utilisateurs');
                 $manager->persist($menu);
                 // groups
-                $menu = $this->menuManager->create();
+                $menu = $this->menuManager->create()->setPublished(true);
                 $this->menuManager->createTranslations($menu, array('fr'));
                 $menu->getTranslation()->setRoute('@msi_user_group_admin_list');
                 $menu->setParent($security);
-                $menu->getTranslation()->setPublished(true)->setName('Groupes');
+                $menu->getTranslation()->setName('Groupes');
                 $manager->persist($menu);
             // menu
-            $menu = $this->menuManager->create();
+            $menu = $this->menuManager->create()->setPublished(true);
             $this->menuManager->createTranslations($menu, array('fr'));
             $menu->getTranslation()->setRoute('@msi_cmf_menu_root_admin_list');
             $menu->setParent($root);
-            $menu->getTranslation()->setPublished(true)->setName('Menus');
+            $menu->getTranslation()->setName('Menus');
             $manager->persist($menu);
 
 
         // main1 MENU
         // root
-        $root = $this->menuManager->create();
+        $root = $this->menuManager->create()->setPublished(true);
         $this->menuManager->createTranslations($root, array('fr', 'en'));
-        $root->getTranslation('fr')->setPublished(true)->setName('main');
-        $root->getTranslation('en')->setPublished(true)->setName('main');
+        $root->getTranslation('fr')->setName('main');
+        $root->getTranslation('en')->setName('main');
         $manager->persist($root);
         $manager->flush();
 

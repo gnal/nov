@@ -84,7 +84,7 @@ msi_cmf:
     page_class: Acme\AppBundle\Entity\Page
     block_class: Acme\AppBundle\Entity\Block
     page_layouts:
-        'AcmeDemoBundle::layout.html.twig': 'Default'
+        'NovCoreBundle::layout.html.twig': 'Default'
     block_slots:
         content_top: au-dessus du contenu
         content_bottom: au-dessous du contenu

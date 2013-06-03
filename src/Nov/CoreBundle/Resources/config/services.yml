@@ -1,0 +1,7 @@
+parameters:
+#    nov_core.example.class: Nov\CoreBundle\Example
+
+services:
+#    nov_core.example:
+#        class: %nov_core.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

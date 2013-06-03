@@ -11,7 +11,7 @@ class MenuBuilder extends BaseMenuBuilder
     {
         $menu = $this->getMenu($factory, 'main');
 
-        $menu->setChildrenAttribute('class', 'nav');
+        $menu->setChildrenAttribute('class', 'nav nav-tabs nav-stacked');
         $this->setBootstrapDropdownMenuAttributes($menu);
 
         return $this->execute($menu);
