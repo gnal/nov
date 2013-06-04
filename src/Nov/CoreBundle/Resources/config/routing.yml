@@ -1,0 +1,3 @@
+nov_core_food_index:
+    pattern:  /menu
+    defaults: { _controller: NovCoreBundle:Food:index }

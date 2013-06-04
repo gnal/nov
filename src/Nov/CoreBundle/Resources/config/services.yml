@@ -2,6 +2,48 @@ parameters:
 #    nov_core.example.class: Nov\CoreBundle\Example
 
 services:
-#    nov_core.example:
-#        class: %nov_core.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    # FoodMenu
+    nov_core_food_menu_admin:
+        class: Nov\CoreBundle\Admin\FoodMenuAdmin
+        arguments: [ @nov_core.food_menu_manager ]
+        parent: msi_cmf.admin
+        tags:
+            - { name: msi.admin }
+        calls:
+            - [ addChild, [ @nov_core_food_category_admin ] ]
+
+    nov_core.food_menu_manager:
+        class: %msi_cmf.manager.class%
+        arguments: [ Nov\CoreBundle\Entity\FoodMenu ]
+        parent: msi_cmf.manager
+
+    # FoodCategory
+    nov_core_food_category_admin:
+        class: Nov\CoreBundle\Admin\FoodCategoryAdmin
+        arguments: [ @nov_core.food_category_manager ]
+        parent: msi_cmf.admin
+        tags:
+            - { name: msi.admin }
+        calls:
+            - [ setParent, [ @nov_core_food_menu_admin ] ]
+            - [ addChild, [ @nov_core_food_admin ] ]
+
+    nov_core.food_category_manager:
+        class: %msi_cmf.manager.class%
+        arguments: [ Nov\CoreBundle\Entity\FoodCategory ]
+        parent: msi_cmf.manager
+
+    # Food
+    nov_core_food_admin:
+        class: Nov\CoreBundle\Admin\FoodAdmin
+        arguments: [ @nov_core.food_manager ]
+        parent: msi_cmf.admin
+        tags:
+            - { name: msi.admin }
+        calls:
+            - [ setParent, [ @nov_core_food_category_admin ] ]
+
+    nov_core.food_manager:
+        class: %msi_cmf.manager.class%
+        arguments: [ Nov\CoreBundle\Entity\Food ]
+        parent: msi_cmf.manager

@@ -1,7 +1,7 @@
 {% extends 'MsiCmfBundle:Page:layout.html.twig' %}
 
 {% block css %}
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 <style type="text/css">
 html {
@@ -10,11 +10,7 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background: url(/bundles/novcore/images/bg_sidebar.png) repeat-y 20px 0, url(/bundles/novcore/images/wtf.jpg);
-}
-
-.container {
-    margin-left: 20px;
+    background: url(http://www.businessinsider.com/image/50fea43beab8ead262000015-1000-750/karen-wise-food-photography-food-porn-vegetables-meal-25.jpg);
 }
 
 a {
@@ -25,15 +21,12 @@ a:hover {
     color: #87191b;
 }
 
-#lft {
-    float: left;
-    width: 220px;
-    padding: 20px 20px 52px;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
 }
 
-#rgt {
-    margin-left: 280px;
-    margin-top: 86px;
+.sidebar, .content {
     padding: 20px 20px 10px;
     background: -moz-linear-gradient(left,  rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.85) 100%);
     background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0.85)), color-stop(100%,rgba(255,255,255,0.85)));
@@ -43,6 +36,16 @@ a:hover {
     background: linear-gradient(to right,  rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9ffffff', endColorstr='#d9ffffff',GradientType=1 );
     border: 1px solid #bbb;
+}
+
+.sidebar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.content {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .navbar-fixed-top, .navbar-fixed-bottom {
@@ -71,6 +74,12 @@ html, body {
 .push {
     height: 42px;
 }
+
+@media (max-width: 767px) {
+    .content {
+        margin-top: 20px;
+    }
+}
 </style>
 {{ parent() }}
 {% endblock %}
@@ -84,26 +93,33 @@ html, body {
 {% block body %}
 <div class="wrap">
     <div class="container">
-        <div id="lft">
-            <p style="margin-bottom: 20px;"><img src="http://www.novello.com/images/nov.png" alt="0"></p>
+        <div class="row">
+            <div class="span4">
+                <div class="sidebar">
+                    <p style="margin-bottom: 20px;"><img src="http://www.novello.com/images/nov.png" alt="0"></p>
 
-            {{ knp_menu_render('AcmeDemoBundle:MenuBuilder:mainMenu', {'allow_safe_labels': true, 'depth': 3, 'currentClass': 'active'}) }}
+                    {{ knp_menu_render('AcmeDemoBundle:MenuBuilder:mainMenu', {'allow_safe_labels': true, 'depth': 3, 'currentClass': 'active'}) }}
 
-            <address>
-                1052 Lionel-Daunais<br>
-                Boucherville, QC<br>
-                J4B 0B2
-            </address>
+                    <address>
+                        1052 Lionel-Daunais<br>
+                        Boucherville, QC<br>
+                        J4B 0B2
+                    </address>
 
-            <address>
-                450.449.7227<br>
-                <a target="_blank" href="mailto:#">info@novello.com</a>
-            </address>
-        </div>
-        <div id="rgt">
-            {{ msi_block_render('content_top', page) }}
-            {{ block('page_content') }}
-            {{ msi_block_render('content_bottom', page) }}
+                    <address>
+                        450.449.7227<br>
+                        <a target="_blank" href="mailto:#">info@novello.com</a>
+                    </address>
+                </div>
+            </div>
+            <div class="span8">
+                <div class="content">
+                    <h2>{{ block('title') }}</h2>
+                    {{ msi_block_render('content_top', page) }}
+                    {{ block('page_content') }}
+                    {{ msi_block_render('content_bottom', page) }}
+                </div>
+            </div>
         </div>
         <div class="push"></div>
     </div>
