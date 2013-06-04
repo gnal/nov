@@ -28,6 +28,11 @@ class FoodMenu
     protected $published;
 
     /**
+     * @ORM\Column(type="integer")
+     */
+    protected $position;
+
+    /**
      * @ORM\OneToMany(targetEntity="FoodCategory", mappedBy="menu")
      */
     protected $categories;
@@ -36,6 +41,19 @@ class FoodMenu
     {
         $this->categories = new ArrayCollection;
         $this->published = false;
+        $this->position = time();
+    }
+
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    public function setPosition($position)
+    {
+        $this->position = $position;
+
+        return $this;
     }
 
     public function getPublished()

@@ -28,6 +28,11 @@ class FoodCategory
     protected $published;
 
     /**
+     * @ORM\Column(type="integer")
+     */
+    protected $position;
+
+    /**
      * @ORM\ManyToOne(targetEntity="FoodMenu", inversedBy="categories")
      * @ORM\JoinColumn(onDelete="CASCADE")
      */
@@ -42,6 +47,19 @@ class FoodCategory
     {
         $this->foods = new ArrayCollection;
         $this->published = false;
+        $this->position = time();
+    }
+
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    public function setPosition($position)
+    {
+        $this->position = $position;
+
+        return $this;
     }
 
     public function getPublished()

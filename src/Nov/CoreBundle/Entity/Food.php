@@ -32,6 +32,11 @@ class Food
     protected $price;
 
     /**
+     * @ORM\Column(type="integer")
+     */
+    protected $position;
+
+    /**
      * @ORM\ManyToOne(targetEntity="FoodCategory", inversedBy="foods")
      * @ORM\JoinColumn(onDelete="CASCADE")
      */
@@ -40,6 +45,19 @@ class Food
     public function __construct()
     {
         $this->published = false;
+        $this->position = time();
+    }
+
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    public function setPosition($position)
+    {
+        $this->position = $position;
+
+        return $this;
     }
 
     public function getPublished()
