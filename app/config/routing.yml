@@ -1,8 +1,12 @@
+msi_resto:
+    resource: "@MsiRestoBundle/Resources/config/routing.yml"
+    prefix:   /
+
 homepage:
-    pattern:  /{_locale}/
+    pattern:  /
     defaults: { _controller: NovCoreBundle:Default:homepage }
-    requirements:
-        _locale: fr|en
+    # requirements:
+    #     _locale: fr|en
 
 nov_core:
     resource: "@NovCoreBundle/Resources/config/routing.yml"

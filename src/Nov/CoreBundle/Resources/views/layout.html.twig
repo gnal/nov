@@ -2,131 +2,8 @@
 
 {% block css %}
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-<style type="text/css">
-html {
-    overflow-y: scroll;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-    background: url(http://3.bp.blogspot.com/-Y65ZUnqaexo/UToYpKI42yI/AAAAAAAAObI/Nvcg9IrnbqI/s1600/fish.jpg);
-}
-
-a {
-    color: #87191b;
-}
-
-a:hover {
-    color: #87191b;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: normal;
-    margin-top: 5px;
-}
-
-.sidebar, .content, .footer {
-    padding: 15px 15px 5px;
-    background: -moz-linear-gradient(left,  rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.85) 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0.85)), color-stop(100%,rgba(255,255,255,0.85)));
-    background: -webkit-linear-gradient(left,  rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%);
-    background: -o-linear-gradient(left,  rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%);
-    background: -ms-linear-gradient(left,  rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%);
-    background: linear-gradient(to right,  rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9ffffff', endColorstr='#d9ffffff',GradientType=1 );
-    border: 1px solid #999;
-}
-
-.sidebar {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.content {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.footer {
-    margin-bottom: 20px;
-}
-
-.nav-tabs.nav-stacked {
-    position: relative;
-}
-
-.nav-tabs.nav-stacked>li>a {
-    font-size: 17.5px;
-    border-width: 0 0;
-    border-radius: 0 !important;
-    font-weight: normal !important;
-}
-
-.nav > li > a:hover {
-    color: #fff !important;
-    background-color: #87191b;
-}
-
-.nav-tabs.nav-stacked>li>a:hover, .nav-tabs.nav-stacked>li>a:focus {
-    border: 0;
-    background-color: #87191b;
-    color: #fff !important;
-}
-
-.nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {
-    border: 0;
-    background-color: #87191b;
-    color: #fff !important;
-}
-
-address {
-    margin-bottom: 10px;
-}
-
-.table th, .table td {
-    border-top: 1px solid #bbb;
-}
-
-.table tr:first-child th, .table tr:first-child td {
-    border-top: 0;
-}
-
-table, form {
-    margin-bottom: 10px;
-}
-
-p.nav-collapse-trigger {
-    display: none;
-}
-
-html, body {
-    height: 100%;
-}
-
-.wrap {
-    min-height: 100%;
-    margin: 0 auto -73px;
-}
-
-.push {
-    height: 73px;
-}
-
-@media (max-width: 979px) {
-    .nav-collapse .nav>li>a {
-        margin-bottom: 0;
-    }
-    .nav-collapse ul, .nav-collapse.collapse ul {
-        margin-bottom: 0;
-        margin-top: 20px;
-    }
-    p.nav-collapse-trigger {
-        display: inline;
-    }
-}
-</style>
+<link rel="stylesheet" href="{{ asset('bundles/novcore/css/style.css') }}">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 {{ parent() }}
 {% endblock %}
 
@@ -142,7 +19,7 @@ html, body {
         <div class="row">
             <div class="span4">
                 <div class="sidebar">
-                    <p style="margin-bottom: 20px;"><a href="{{ path('homepage') }}"><img src="http://www.novello.com/images/nov.png" alt="0"></a></p>
+                    <p style="margin-bottom: 20px;"><a href="{{ path('homepage') }}"><img src="/bundles/novcore/images/logo_diya.gif" alt="0"></a></p>
                     <hr>
                     <p class="nav-collapse-trigger">
                         <a href="#" class="btn btn-inverse pull-right" data-toggle="collapse" data-target=".nav-collapse">
@@ -154,19 +31,20 @@ html, body {
                     </div>
                     <hr>
                     <address>
-                        1052 Lionel-Daunais<br>
-                        Boucherville, QC<br>
-                        J4B 0B2
+                        6090 rue Sherbrooke Est<br>
+                        Montréal (Québec) H1N 1C1
                     </address>
                     <address>
-                        450.449.7227<br>
-                        <a target="_blank" href="mailto:#">info@novello.com</a>
+                        514.256.2777<br>
+                        <a target="_blank" href="mailto:#">info@diya.com</a>
                     </address>
                 </div>
             </div>
             <div class="span8">
                 <div class="content">
-                    <h2>{{ block('title') }}</h2>
+                    {% if page.showTitle %}
+                        <h2>{{ block('title') }}</h2>
+                    {% endif %}
                     {{ msi_block_render('content_top', page) }}
                     {{ block('page_content') }}
                     {{ msi_block_render('content_bottom', page) }}
@@ -181,16 +59,4 @@ html, body {
         <p><small class="muted">&copy; {{ 'now'|date('Y') }} {{ site.translation.brand }}</small></p>
     </div>
 </div>
-{#<div class="navbar navbar-inverse navbar-fixed-bottom">
-    <div class="navbar-inner">
-        <div class="container">
-            <p class="navbar-text pull-right">
-                <small><a href="{{ path('homepage', {'_locale': app.request.locale == 'fr' ? 'en' : 'fr'}) }}">{{ app.request.locale == 'fr' ? 'English' : 'Français' }}</a></small>
-            </p>
-            <p class="navbar-text">
-                <small class="muted">&copy; {{ 'now'|date('Y') }} {{ site.translation.brand }}</small>
-            </p>
-        </div>
-    </div>
-</div>#}
 {% endblock body %}

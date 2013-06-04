@@ -47,3 +47,16 @@ services:
         class: %msi_cmf.manager.class%
         arguments: [ Nov\CoreBundle\Entity\Food ]
         parent: msi_cmf.manager
+
+    # Photo
+    nov_core_photo_admin:
+        class: Nov\CoreBundle\Admin\PhotoAdmin
+        arguments: [ @nov_core.photo_manager ]
+        parent: msi_cmf.admin
+        tags:
+            - { name: msi.admin }
+
+    nov_core.photo_manager:
+        class: %msi_cmf.manager.class%
+        arguments: [ Nov\CoreBundle\Entity\Photo ]
+        parent: msi_cmf.manager

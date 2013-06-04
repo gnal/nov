@@ -1,0 +1,15 @@
+{% extends 'NovCoreBundle::layout.html.twig' %}
+
+{% block content %}
+{% for photo in photos %}
+    {% if loop.index == 1 or loop.index % 3 == 1 %}
+    <div class="row-fluid">
+    {% endif %}
+    <div class="span4">
+        <p style="margin-bottom: 20px;"><img class="photo" src="{{ photo.pathname('photo', 't') }}" alt="0"></p>
+    </div>
+    {% if loop.index == photos|length or loop.index % 3 == 0 %}
+    </div>
+    {% endif %}
+{% endfor %}
+{% endblock content %}
