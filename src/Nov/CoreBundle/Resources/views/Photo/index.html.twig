@@ -6,10 +6,37 @@
     <div class="row-fluid">
     {% endif %}
     <div class="span4">
-        <p style="margin-bottom: 20px;"><img class="photo" src="{{ photo.pathname('photo', 't') }}" alt="0"></p>
+        <p style="margin-bottom: 10px;"><a class="fancybox" rel="gallery1" href="{{ photo.pathname('photo') }}"><img class="photo" src="{{ photo.pathname('photo', 't') }}" alt="0"></a></p>
     </div>
     {% if loop.index == photos|length or loop.index % 3 == 0 %}
     </div>
     {% endif %}
 {% endfor %}
 {% endblock content %}
+
+{% block css %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('bundles/novcore/vendor/fancybox/source/jquery.fancybox.css') }}">
+{% endblock css %}
+
+{% block js %}
+{{ parent() }}
+<script src="{{ asset('bundles/novcore/vendor/fancybox/source/jquery.fancybox.js') }}"></script>
+<script>
+(function($) {
+    "use strict";
+    $(document).ready(function() {
+        $('.fancybox').fancybox({
+            speedIn: 200,
+            speedOut: 200,
+            fitToView: true,
+            helpers: {
+                overlay: {
+                    fixed: false
+                }
+            }
+        });
+    });
+})(jQuery);
+</script>
+{% endblock js %}

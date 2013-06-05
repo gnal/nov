@@ -1,0 +1,35 @@
+{% extends 'NovCoreBundle::layout.html.twig' %}
+
+{% block content %}
+<div class="row-fluid">
+    <div class="span6">
+        <form>
+            <label class="control-label" for="inputEmail">Nom</label>
+            <input type="text" id="inputEmail">
+
+            <label class="control-label" for="inputEmail">Email</label>
+            <input type="text" id="inputEmail">
+
+            <label class="control-label" for="inputEmail">Téléphone</label>
+            <input type="text" id="inputEmail">
+
+            <label class="control-label" for="inputEmail">Date</label>
+            <input type="text" id="inputEmail">
+
+            <label class="control-label" for="inputEmail">Heure</label>
+            <select></select>
+
+            <label class="control-label" for="inputEmail">Personnes</label>
+            <select></select>
+
+            <label class="control-label" for="inputEmail">Message</label>
+            <textarea placeholder="Message"></textarea>
+            <br>
+            <button class="btn btn-inverse" type=submit>Envoyer</button>
+        </form>
+    </div>
+    <div class="span6">
+        ...
+    </div>
+</div>
+{% endblock content %}

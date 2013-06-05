@@ -5,3 +5,11 @@ nov_core_food_index:
 nov_core_photo_index:
     pattern:  /photos
     defaults: { _controller: NovCoreBundle:Photo:index }
+
+nov_core_contact_index:
+    pattern:  /contact
+    defaults: { _controller: NovCoreBundle:Contact:index }
+
+nov_core_reservation_index:
+    pattern:  /reservation
+    defaults: { _controller: NovCoreBundle:Reservation:index }

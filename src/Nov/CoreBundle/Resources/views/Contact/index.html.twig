@@ -1,0 +1,71 @@
+{% extends 'NovCoreBundle::layout.html.twig' %}
+
+{% block content %}
+<iframe width="100%" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ca/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=6090+Rue+Sherbrooke+Est,+Montreal,+QC&amp;aq=0&amp;oq=6090+rue+Sherbrooke+Est&amp;sll=45.558042,-73.730303&amp;sspn=0.65866,1.046448&amp;ie=UTF8&amp;hq=&amp;hnear=6090+Rue+Sherbrooke+Est,+Montr%C3%A9al,+Montreal,+Quebec&amp;ll=45.578446,-73.545417&amp;spn=0.005144,0.008175&amp;t=m&amp;z=14&amp;output=embed&amp;z=15&amp;iwloc="></iframe>
+<hr>
+<div class="row-fluid">
+    <div class="span6">
+        <h4>Horaire</h4>
+        <p>Du lundi au dimanche de<br>
+            12:00 à 14:30 et de 17:00 à 22:00.</p>
+        {#<table>
+            <tr>
+                <td>Dim.</td>
+                <td>12:00 à 14:30, 17:00 à 22:00</td>
+            </tr>
+            <tr>
+                <td>Lun.</td>
+                <td>12:00 à 14:30, 17:00 à 22:00</td>
+            </tr>
+            <tr>
+                <td>Mar.</td>
+                <td>12:00 à 14:30, 17:00 à 22:00</td>
+            </tr>
+            <tr>
+                <td>Mer.</td>
+                <td>12:00 à 14:30, 17:00 à 22:00</td>
+            </tr>
+            <tr>
+                <td>Jeu.</td>
+                <td>12:00 à 14:30, 17:00 à 22:00</td>
+            </tr>
+            <tr>
+                <td>Ven.</td>
+                <td>12:00 à 14:30, 17:00 à 22:00</td>
+            </tr>
+            <tr>
+                <td>Sam.</td>
+                <td>12:00 à 14:30, 17:00 à 22:00</td>
+            </tr>
+        </table>#}
+    </div>
+    <div class="span6">
+        <h4>Coordonnées</h4>
+        <address>
+            6090 rue Sherbrooke Est<br>
+            Montréal (Québec) H1N 1C1
+        </address>
+        <address>
+            514.256.2777<br>
+            <a target="_blank" href="mailto:#">info@restorantdiya.com</a>
+        </address>
+    </div>
+</div>
+<hr>
+<div class="row-fluid">
+    <div class="span12">
+        <h4>Question ou commentaire?</h4>
+        <form>
+            <input type="text" placeholder="Nom">
+            <br>
+            <input type="text" placeholder="Email">
+            <br>
+            <input type="text" placeholder="Sujet">
+            <br>
+            <textarea placeholder="Message"></textarea>
+            <br>
+            <button class="btn btn-inverse" type=submit>Envoyer</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
