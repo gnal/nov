@@ -1,7 +1,11 @@
 {% extends 'NovCoreBundle::layout.html.twig' %}
 
 {% block content %}
-<table class="table">
+<ul>
+<li><a href="#soupes-et-salades">Soupes et salades</a></li>
+<li><a href="#antipasti">Antipasti</a></li>
+</ul>
+<table class="table" id="soupes-et-salades">
 <tr>
     <th colspan=2 style="text-transform: uppercase;">Soupes et salades</th>
 </tr>
@@ -35,7 +39,7 @@
 </tr>
 </table>
 
-<table class="table">
+<table class="table" id="antipasti">
     <tr>
         <th colspan=2 style="text-transform: uppercase;">Antipasti</th>
     </tr>
