@@ -19,11 +19,11 @@ body {
 }
 
 a {
-    color: #333333;
+    color: blue;
 }
 
 a:hover {
-    color: #333333;
+    color: blue;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -63,6 +63,12 @@ h4 {
 .sidebar {
     margin-top: 20px;
     margin-bottom: 20px;
+    background: #1f1f1f;
+}
+
+.sidebar hr {
+    border-bottom: 1px solid #292929;
+    border-top: 1px solid #151515;
 }
 
 .content {
@@ -90,23 +96,24 @@ h4 {
     border-width: 0 0;
     border-radius: 0 !important;
     font-weight: normal !important;
+    color: #e8e8e8;
 }
 
 .nav > li > a:hover {
-    color: #fff !important;
-    background-color: #333333;
+    background: none;
+    color: #e8e8e8 !important;
 }
 
 .nav-tabs.nav-stacked>li>a:hover, .nav-tabs.nav-stacked>li>a:focus {
     border: 0;
-    background-color: #333333;
-    color: #fff !important;
+    background: none;
+    color: #e8e8e8 !important;
 }
 
 .nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {
     border: 0;
-    background-color: #333333;
-    color: #fff !important;
+    background: none;
+    color: #e8e8e8 !important;
 }
 
 address {
@@ -148,7 +155,7 @@ iframe {
     margin-bottom: 10px;
 }
 
-html, body {
+/*html, body {
     height: 100%;
 }
 
@@ -159,7 +166,7 @@ html, body {
 
 .push {
     height: 73px;
-}
+}*/
 
 .btn {
     -webkit-box-shadow: none;
@@ -193,17 +200,4 @@ html, body {
     padding-bottom: 0;
     padding-top: 0;
     border: 0;
-}
-
-@media (max-width: 979px) {
-    .nav-collapse .nav>li>a {
-        margin-bottom: 0;
-    }
-    .nav-collapse ul, .nav-collapse.collapse ul {
-        margin-bottom: 0;
-        margin-top: 20px;
-    }
-    p.nav-collapse-trigger {
-        display: inline;
-    }
 }
